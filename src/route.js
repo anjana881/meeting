@@ -9,8 +9,8 @@ import Submit from "./components/Submit";
 import Time from "./components/Time";
 
 import Cancel from "./components/Cancel";
-import Demo from "./Demos/demo";
-import Demo1 from "./Demos/demo1";
+// import Demo from "./Demos/demo";
+// import Demo1 from "./Demos/demo1";
 
 export const route = createBrowserRouter([
   {
@@ -45,14 +45,14 @@ export const route = createBrowserRouter([
     path: "/submit",
     element: <Submit />,
   },
-  {
-    path: "/demo",
-    element: <Demo />,
-  },
-  {
-    path: "/demo1",
-    element: <Demo1 />,
-  },
+  // {
+  //   path: "/demo",
+  //   element: <Demo />,
+  // },
+  // {
+  //   path: "/demo1",
+  //   element: <Demo1 />,
+  // },
   {
     path: "/cancel",
     element: <Cancel />,

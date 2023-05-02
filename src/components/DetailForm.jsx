@@ -50,7 +50,7 @@ const DetailForm = () => {
       />
 
       {toggleGuest && (
-        <div className="text-sm font-bold mt-2">
+        <div className="text-sm font-bold mt-2 ">
           <p className="font-bold">Guest Email</p>
           <input
             type="email"
@@ -60,28 +60,33 @@ const DetailForm = () => {
         </div>
       )}
 
-      <p className="text-sm font-bold mt-2">Additional Notes</p>
+      <p className="text-sm font-bold mt-2 w-[100%]">Additional Notes</p>
       <textarea
         name=""
         id=""
         cols="40"
         rows="3"
         onChange={handleInputNotes}
-        className="border"
+        className="border w-[100%] mb-4 rounded-md"
       ></textarea>
-      <i onClick={handleToggleGuest}>
-        <AiOutlineUserAdd />
-      </i>
-      <div className="flex">
-        <button className="border border-cyan-100 mr-4 rounded-md bg-slate-400 p-2">
-          Submit
-        </button>
 
-        <Link to="/cancel">
-          <button className="border border-cyan-100 rounded-md bg-red-500 p-2">
-            Cancel
+      <div className="flex justify-between ">
+        <div>
+          <i onClick={handleToggleGuest} className="text-2xl">
+            <AiOutlineUserAdd />
+          </i>
+        </div>
+        <div>
+          <button className="border border-cyan-100 mr-2 rounded-md bg-slate-400 p-2">
+            Submit
           </button>
-        </Link>
+
+          <Link to="/cancel">
+            <button className="border border-cyan-100 rounded-md bg-red-500 p-2">
+              Cancel
+            </button>
+          </Link>
+        </div>
       </div>
     </form>
   );

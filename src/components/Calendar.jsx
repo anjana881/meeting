@@ -12,12 +12,11 @@ import { setDate } from "../Slice/DateSlice";
 const Calendar = () => {
   const dispatch = useDispatch();
 
-  const minDate = new Date();
   const [selectedDate, setSelectedDate] = useState(null);
   const [data, setData] = useState([]);
   const [selectedTimezone, setSelectedTimezone] = useState("");
   const [filteredTimes, setFilteredTimes] = useState([]);
-
+  const minDate = new Date();
   minDate.setDate(minDate.getDate() - 1);
   useEffect(() => {
     flatpickr("#my-calendar", {
@@ -25,6 +24,7 @@ const Calendar = () => {
       dateFormat: "Y-m-d",
       disable: [
         { from: "1900-01-01", to: minDate },
+
         function (date) {
           return date.getDay() === 0;
         },
@@ -76,8 +76,6 @@ const Calendar = () => {
         <p className="text-center ">
           {" "}
           Date: {selectedDate.toLocaleDateString()}
-          {/* <p>Month: {selectedDate.getMonth() + 1}</p>
-          <p>Date: {selectedDate.getDate()}</p> */}
         </p>
       )}
     </div>
