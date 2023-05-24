@@ -10,8 +10,7 @@ const DetailForm = () => {
     event.preventDefault();
     navigate("/submit");
   };
-  // const guest = useSelector((state) => state.detailSlice.guest);
-  // dispatch(setGuest(guest));
+
   const [toggleGuest, setToggleGuest] = useState(false);
   const handleToggleGuest = () => {
     setToggleGuest(!toggleGuest);

@@ -11,7 +11,7 @@ const Navbar = () => {
               Set Meeting
             </li>
           </Link>
-          <Link to="todo">
+          <Link to="menu">
             <li className="text-2xl  font-bold p-3  hover:text-slate-500 cursor-pointer underline">
               Menus
             </li>

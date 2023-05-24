@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from "react-redux";
-// import { twelveHourFormat, twentyFourFormat } from
 
 import React, { useState, useEffect } from "react";
 import moment from "moment-timezone";
@@ -40,11 +39,13 @@ const Time = () => {
     if (location) {
       const now = moment().tz(location);
       const startTime = moment()
+        .add(1, "hour")
         .tz(location)
         .set({ hour: 10, minute: 0, second: 0, millisecond: 0 });
       const endTime = moment()
+        .add(1, "hour")
         .tz(location)
-        .set({ hour: 16, minute: 30, second: 0, millisecond: 0 });
+        .set({ hour: 16, minute: 59, second: 0, millisecond: 0 });
       const filteredTimes = [];
 
       while (startTime.isSameOrBefore(endTime)) {
@@ -64,7 +65,6 @@ const Time = () => {
       setFilteredTimes(filteredTimes);
     }
   }, [location]);
-  console.log("this page");
   console.log("location", location);
 
   return (

@@ -12,7 +12,6 @@ const Dashboard = () => {
         <Link
           to="/30minute"
           className="bg-white rounded-xl w-1/3 shadow-xl p-8 px-6 mt-8 flex flex-col justify-center hover:bg-green-200 cursor-pointer"
-          // onClick={handlePopup}
         >
           <p>30 min meeting</p>
           <div className="flex space-x-2">

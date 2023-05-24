@@ -14,7 +14,7 @@ import Time from "./Time";
 
 const ThirtyMin = () => {
   const { id } = useParams();
-  const [apicall, setapicall] = useState([]);
+
   const dispatch = useDispatch();
   const [showPopup, setShowPopup] = useState(false);
   const handlePopup = () => {
@@ -24,7 +24,6 @@ const ThirtyMin = () => {
   const date = useSelector((store) => store.dateSlice.date);
   const time = useSelector((store) => store.dateSlice.time);
 
-  // console.log(date);
   useEffect(() => {
     axios.get("http://worldtimeapi.org/api/timezone").then((res) => {
       dispatch(setData(res.data));
@@ -33,7 +32,7 @@ const ThirtyMin = () => {
   });
 
   return (
-    <div className="card w-[70%] h-[420px] m-auto mt-16   bg-[#bec3c7]  text-black flex   ">
+    <div className="card w-[70%] h-[420px] m-auto mt-16   bg-[#bec3c7]  text-black flex">
       <div className="left-bar border-r-2  p-8 w-[30%] flex flex-col">
         <img src={logo} className="mb-4 h-12 w-12 " alt="logo" />
         <h3 className="mb-4">
@@ -46,14 +45,15 @@ const ThirtyMin = () => {
           </i>
           <p>call video</p>
         </div>
-        <div className="flex items-center mb-4 ">
+        <div className="flex items-center mb-2 ">
           <i className="mr-2">
             <BiTime />
           </i>
-          <p>{id === "30minute" ? "30 Min meeting" : "15 min meeting"}</p>
+          <p>{id === "30minute" ? "30 Min meeting" : "15 Min Meeting"}</p>
         </div>
         <div onClick={handlePopup} className="flex items-center mb-4 ">
           {showPopup && <Popup />}
+          {/* {<Popup />} */}
           <i className="mr-2">
             <BsGlobe />
           </i>

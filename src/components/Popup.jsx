@@ -7,7 +7,7 @@ const Popup = () => {
   const dispatch = useDispatch();
 
   console.log("data", data);
-  // const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState();
   const countryHandler = (event) => {
     dispatch(setCountry(event.target.value));
     console.log("popup", event.target.value);
@@ -22,11 +22,12 @@ const Popup = () => {
       <select onChange={countryHandler} className="flex flex-col mt-2">
         <option value="select">Select TimeZone</option>
 
-        {data.map((location) => (
-          <option className="text-black" value={location}>
-            {location}
-          </option>
-        ))}
+        {data &&
+          data?.map((location) => (
+            <option className="text-black" value={location}>
+              {location}
+            </option>
+          ))}
       </select>
     </div>
   );

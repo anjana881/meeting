@@ -1,13 +1,11 @@
 import React from "react";
-import logo from "../assets/logo192.png";
-import { useEffect, useRef, useState } from "react";
-import { FaVideo } from "react-icons/fa";
 import { BiTime } from "react-icons/bi";
+import { FaVideo } from "react-icons/fa";
 import { FcViewDetails } from "react-icons/fc";
-import DetailForm from "./DetailForm";
-import { useDispatch, useSelector } from "react-redux";
-import { setDate } from "../Slice/DateSlice";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import logo from "../assets/logo192.png";
+import DetailForm from "./DetailForm";
 
 const Details = () => {
   const { id } = useParams();
